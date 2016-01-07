@@ -17,9 +17,15 @@ npm install link-types
 ## Usage
 ```js
 var linkTypes = require("link-types");
+
+linkTypes("nofollow");
+//=> ["nofollow"]
  
 linkTypes(" tag  NOFOLLOW ");
 //=> ["tag", "nofollow"]
+
+linkTypes.map(" tag   NOFOLLOW ");
+//=> { tag:true, nofollow:true }
 ```
 
 

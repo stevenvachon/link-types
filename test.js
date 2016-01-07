@@ -5,7 +5,7 @@ var expect = require("chai").expect;
 
 
 
-it("should work", function()
+it("linkTypes()", function()
 {
 	var tagNofollow = ["tag","nofollow"];
 	
@@ -17,4 +17,20 @@ it("should work", function()
 	expect( linkTypes("tag  nofollow")  ).to.deep.equal(tagNofollow);
 	expect( linkTypes("tag   nofollow") ).to.deep.equal(tagNofollow);
 	expect( linkTypes("tag NOFOLLOW")   ).to.deep.equal(tagNofollow);
+});
+
+
+
+it("linkTypes.map()", function()
+{
+	var tagNofollow = { tag:true, nofollow:true };
+	
+	expect( linkTypes.map("")    ).to.deep.equal( {}           );
+	expect( linkTypes.map("tag") ).to.deep.equal( { tag:true } );
+	
+	expect( linkTypes.map("tag nofollow")   ).to.deep.equal(tagNofollow);
+	expect( linkTypes.map(" tag nofollow ") ).to.deep.equal(tagNofollow);
+	expect( linkTypes.map("tag  nofollow")  ).to.deep.equal(tagNofollow);
+	expect( linkTypes.map("tag   nofollow") ).to.deep.equal(tagNofollow);
+	expect( linkTypes.map("tag NOFOLLOW")   ).to.deep.equal(tagNofollow);
 });
