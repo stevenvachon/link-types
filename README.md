@@ -8,7 +8,7 @@ Note: this library is not responsible for parsing any HTML.
 
 ## Installation
 
-[Node.js](http://nodejs.org/) `>= 0.10` is required. To install, type this at the command line:
+[Node.js](http://nodejs.org/) `>= 6` is required. To install, type this at the command line:
 ```shell
 npm install link-types
 ```
@@ -16,16 +16,16 @@ npm install link-types
 
 ## Usage
 ```js
-var linkTypes = require("link-types");
+const linkTypes = require('link-types');
 
-linkTypes("nofollow");
-//=> ["nofollow"]
+linkTypes('nofollow');
+//-> ['nofollow']
  
-linkTypes(" tag  NOFOLLOW ");
-//=> ["tag", "nofollow"]
+linkTypes(' tag  NOFOLLOW ');
+//-> ['tag', 'nofollow']
 
-linkTypes.map(" tag   NOFOLLOW ");
-//=> { tag:true, nofollow:true }
+linkTypes.map(' tag   NOFOLLOW ');
+//-> { tag:true, nofollow:true }
 ```
 
 

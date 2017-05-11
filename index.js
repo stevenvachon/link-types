@@ -2,40 +2,25 @@
 
 
 
-function isNotEmpty(value)
-{
-	return value !== "";
-}
-
-
-
 function linkTypes(attrValue)
 {
-	return split(attrValue).filter(isNotEmpty);
+	return split(attrValue).filter(type => type !== "");
 }
 
 
 
 function map(attrValue)
 {
-	var i,numValues,value,result;
-	
-	attrValue = split(attrValue);
-	numValues = attrValue.length;
-	
-	result = {};
-	
-	for (i=0; i<numValues; i++)
+	return split(attrValue).reduce( function(result, type)
 	{
-		value = attrValue[i];
-		
-		if (value !== "")
+		if (type !== "")
 		{
-			result[value] = true;
+			result[type] = true;
 		}
-	}
-	
-	return result;
+
+		return result;
+
+	}, {});
 }
 
 

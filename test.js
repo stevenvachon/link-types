@@ -1,13 +1,13 @@
 "use strict";
-var linkTypes = require("./");
-
-var expect = require("chai").expect;
+const {expect} = require("chai");
+const {it} = require("mocha");
+const linkTypes = require("./");
 
 
 
 it("linkTypes()", function()
 {
-	var tagNofollow = ["tag","nofollow"];
+	const tagNofollow = ["tag","nofollow"];
 	
 	expect( linkTypes("")    ).to.deep.equal( []      );
 	expect( linkTypes("tag") ).to.deep.equal( ["tag"] );
@@ -23,7 +23,7 @@ it("linkTypes()", function()
 
 it("linkTypes.map()", function()
 {
-	var tagNofollow = { tag:true, nofollow:true };
+	const tagNofollow = { tag:true, nofollow:true };
 	
 	expect( linkTypes.map("")    ).to.deep.equal( {}           );
 	expect( linkTypes.map("tag") ).to.deep.equal( { tag:true } );

@@ -1,35 +1,21 @@
 {
   "name": "link-types",
   "description": "Parse an HTML attribute value containing link types.",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "license": "MIT",
-  "homepage": "https://github.com/stevenvachon/link-types",
-  "author": {
-    "name": "Steven Vachon",
-    "email": "contact@svachon.com",
-    "url": "http://www.svachon.com/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/stevenvachon/link-types.git"
-  },
-  "bugs": {
-    "url": "https://github.com/stevenvachon/link-types/issues"
-  },
+  "author": "Steven Vachon <contact@svachon.com> (https://www.svachon.com/)",
+  "repository": "stevenvachon/link-types",
   "devDependencies": {
-    "chai": "^3.4.1",
-    "mocha": "^2.3.4"
+    "chai": "^4.0.0",
+    "mocha": "^3.4.2"
   },
   "engines": {
-    "node": ">= 0.10"
+    "node": ">= 6"
   },
   "scripts": {
-    "test": "mocha test.js --reporter spec --check-leaks --bail"
+    "test": "mocha test.js --reporter=spec --check-leaks --bail"
   },
-  "files": [
-    "index.js",
-    "license"
-  ],
+  "files": ["index.js"],
   "keywords": [
     "html",
     "link",
