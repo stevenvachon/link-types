@@ -1,21 +1,30 @@
 {
   "name": "link-types",
   "description": "Parse an HTML attribute value containing link types.",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "license": "MIT",
-  "author": "Steven Vachon <contact@svachon.com> (https://www.svachon.com/)",
-  "repository": "stevenvachon/link-types",
+  "author": "Steven Vachon <contact@svachon.com> (https://svachon.com)",
+  "repository": "github:stevenvachon/link-types",
+  "browser": "index-es5.js",
   "devDependencies": {
-    "chai": "^4.0.0",
-    "mocha": "^3.4.2"
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
   },
   "engines": {
-    "node": ">= 6"
+    "node": ">= 8"
   },
   "scripts": {
-    "test": "mocha test.js --reporter=spec --check-leaks --bail"
+    "prepublishOnly": "babel index.js --out-file=index-es5.js --presets=@babel/env --source-maps",
+    "test": "mocha test.js --check-leaks --bail"
   },
-  "files": ["index.js"],
+  "files": [
+    "index.js",
+    "index-es5.js",
+    "index-es5.js.map"
+  ],
   "keywords": [
     "html",
     "link",

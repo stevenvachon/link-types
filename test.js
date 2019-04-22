@@ -5,13 +5,13 @@ const linkTypes = require("./");
 
 
 
-it("linkTypes()", function()
+it("linkTypes()", () =>
 {
 	const tagNofollow = ["tag","nofollow"];
-	
+
 	expect( linkTypes("")    ).to.deep.equal( []      );
 	expect( linkTypes("tag") ).to.deep.equal( ["tag"] );
-	
+
 	expect( linkTypes("tag nofollow")   ).to.deep.equal(tagNofollow);
 	expect( linkTypes(" tag nofollow ") ).to.deep.equal(tagNofollow);
 	expect( linkTypes("tag  nofollow")  ).to.deep.equal(tagNofollow);
@@ -21,13 +21,13 @@ it("linkTypes()", function()
 
 
 
-it("linkTypes.map()", function()
+it("linkTypes.map()", () =>
 {
 	const tagNofollow = { tag:true, nofollow:true };
-	
+
 	expect( linkTypes.map("")    ).to.deep.equal( {}           );
 	expect( linkTypes.map("tag") ).to.deep.equal( { tag:true } );
-	
+
 	expect( linkTypes.map("tag nofollow")   ).to.deep.equal(tagNofollow);
 	expect( linkTypes.map(" tag nofollow ") ).to.deep.equal(tagNofollow);
 	expect( linkTypes.map("tag  nofollow")  ).to.deep.equal(tagNofollow);

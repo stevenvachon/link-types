@@ -2,33 +2,24 @@
 
 
 
-function linkTypes(attrValue)
+const linkTypes = attrValue => split(attrValue).filter(type => type !== "");
+
+
+
+const map = attrValue => split(attrValue).reduce((result, type) =>
 {
-	return split(attrValue).filter(type => type !== "");
-}
-
-
-
-function map(attrValue)
-{
-	return split(attrValue).reduce( function(result, type)
+	if (type !== "")
 	{
-		if (type !== "")
-		{
-			result[type] = true;
-		}
+		result[type] = true;
+	}
 
-		return result;
+	return result;
 
-	}, {});
-}
+}, {});
 
 
 
-function split(attrValue)
-{
-	return attrValue.trim().toLowerCase().split(" ");
-}
+const split = attrValue => attrValue.trim().toLowerCase().split(" ");
 
 
 
